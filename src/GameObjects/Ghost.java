@@ -3,18 +3,17 @@ package GameObjects;
 import Geom.Point3D;
 
 /**
- * this class represent a simple Packman 
+ * this class represent a simple Ghost 
  */
-public class Packman extends GameObject{
+public class Ghost extends GameObject{
 
 	/**
-	 * Packman constructor
+	 * Ghost constructor
 	 * @param Gps Point3D that represent the Packman
 	 */
-	public Packman(Point3D Gps) {
+	public Ghost(Point3D Gps) {
 		super(Gps);
 		// TODO Auto-generated constructor stub
 	}
 
 }
-

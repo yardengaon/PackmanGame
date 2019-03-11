@@ -1,5 +1,7 @@
 package ex4_example;
 import java.util.ArrayList;
+
+import GameObjects.Player;
 import Robot.Play;
 /**
  * This is the basic example of how to work with the Ex4 "server" like system:
@@ -21,7 +23,7 @@ import Robot.Play;
 public class Ex4_Main_Example {
 	public static void main(String[] args) {
 		// 1) Create a "play" from a file (attached to Ex4)
-		String file_name = "data/Ex4_OOP_example2.csv";
+		String file_name = "data/Ex4_OOP_example8.csv";
 		Play play1 = new Play(file_name);
 		
 		// 2) Set your ID's - of all the group members
@@ -30,8 +32,11 @@ public class Ex4_Main_Example {
 		// 3)Get the GPS coordinates of the "arena"
 		String map_data = play1.getBoundingBox();
 		System.out.println("Bounding Box info: "+map_data);
-		
 		// 4) get the game-board data
+		play1.setInitLocation(32.1040,35.2061);
+		play1.start();
+		// 6) Start the "server"
+		 // default max time is 100 seconds (1000*100 ms).
 		ArrayList<String> board_data = play1.getBoard();
 		for(int i=0;i<board_data.size();i++) {
 			System.out.println(board_data.get(i));
@@ -40,7 +45,7 @@ public class Ex4_Main_Example {
 		System.out.println("Init Player Location should be set using the bounding box info");
 		
 		// 5) Set the "player" init location - should be a valid location
-		play1.setInitLocation(32.1040,35.2061);
+		//play1.setInitLocation(32.1040,35.2061);
 		
 		// 6) Start the "server"
 		play1.start(); // default max time is 100 seconds (1000*100 ms).

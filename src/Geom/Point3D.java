@@ -1,14 +1,20 @@
 package Geom;
 
 import java.io.Serializable;
+
+/**
+ * This class represents a 3D point in space.
+ */
 public class Point3D implements Geom_element, Serializable 
 {
-	/**
-	 * This class represents a 3D point in space.
-	 */
+	
+	//Variable statements
 	private static final long serialVersionUID = 1L;
 	private double _x,_y,_z;
 	
+	/**
+	 * Point3D constructor
+	 */
 	public Point3D() 
 	{
 		_x=1;
@@ -16,6 +22,12 @@ public class Point3D implements Geom_element, Serializable
 		_z=1;
 	}
 
+	/**
+	 * Point3D constructor
+	 * @param x value of x
+	 * @param y value of y
+	 * @param z value of z
+	 */
 	public Point3D(double x,double y,double z) 
 	{
 		_x=x;
@@ -23,12 +35,20 @@ public class Point3D implements Geom_element, Serializable
 		_z=z;
 	}
 
+	/**
+	 * Point3D constructor
+	 * @param x value of x
+	 * @param y value of y
+	 * @param z value of z
+	 */
 	public Point3D(Point3D p) 
 	{
 		_x=p.x();
 		_y=p.y();
 		_z=p.z();
 	}
+	
+	
 	public Point3D(double x,double y) 
 	{this(x,y,0);}
 	public Point3D(String s) {
