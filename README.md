@@ -43,15 +43,12 @@ The File format package has:
   - replaceObjects: Updating the game from the server
 
 ### ExampleGameMap
-![screenshot 51](https://user-images.githubusercontent.com/45077625/53831552-c041ff00-3f8d-11e9-992f-aa2f9eb4c1b1.png)
+
 ### ExampleBeforeRun
-![screenshot 43](https://user-images.githubusercontent.com/45077625/53831571-ce901b00-3f8d-11e9-93bc-0a0b3b2c2f4d.png)
+
 ### ExampleMiddelRun
-![screenshot 44](https://user-images.githubusercontent.com/45077625/53831690-1151f300-3f8e-11e9-9940-7b6be5acad09.png)
+
 ### ExampleAfterRun
-![screenshot 47](https://user-images.githubusercontent.com/45077625/53831725-23cc2c80-3f8e-11e9-8c35-21b631e80694.png)
-### ExampleKmlRun
-![screenshot 50](https://user-images.githubusercontent.com/45077625/53831747-30e91b80-3f8e-11e9-86c1-7e677b19c91f.png)
 
 ### Sorces
 - the idea of Azimuth : https://en.wikipedia.org/wiki/Azimuth
