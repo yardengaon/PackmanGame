@@ -7,6 +7,7 @@ import Geom.Point3D;
 /**
  * This class is responsible for Converts coordinates
  */
+
 public class myCoords implements coords_converter  {
 
 	//Variable statements
@@ -27,7 +28,14 @@ public class myCoords implements coords_converter  {
 	 */
 	public static myCoords getInstance() {
 		if(obj1 == null)
-			obj1 = new myCoords();
+			synchronized(myCoords.class) {
+				myCoords obj2 = obj1;
+				if(obj2 == null) {
+					synchronized(myCoords.class) {
+						obj1 = new myCoords();
+					}
+				}
+			}
 		return obj1;
 	}
 
@@ -199,5 +207,5 @@ public class myCoords implements coords_converter  {
 		double x=Math.cos(latR1)*Math.sin(latR2)-Math.sin(latR1)*Math.cos(latR2)*Math.cos(longDiff);
 		return (int) (Math.toDegrees(Math.atan2(y, x))+360)%360;
 	}
-	
+
 }

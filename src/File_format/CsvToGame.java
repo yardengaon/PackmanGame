@@ -28,8 +28,8 @@ public class CsvToGame {
 	 * create from a csv file a game
 	 * @param game the csv keeped as a game object  
 	 */
-	public void Csv2Game(Game game) throws IOException {
-		BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\yarde\\Desktop\\yarden\\Ex4_OOP_example8.csv"));
+	public void Csv2Game(Game game, String s) throws IOException {
+		BufferedReader br = new BufferedReader(new FileReader(s));
 		String str = "start";
 		while(str != null) {
 			str = br.readLine();

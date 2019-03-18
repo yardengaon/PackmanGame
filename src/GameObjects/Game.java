@@ -1,10 +1,12 @@
 package GameObjects;
 
+import java.awt.geom.Line2D;
+import java.awt.geom.Point2D;
 import java.util.ArrayList;
 
 import Geom.Point3D;
 /**
- * this class represent a simple fruit 
+ * this class represent a game 
  */
 public class Game {
 
@@ -13,6 +15,9 @@ public class Game {
 	private ArrayList<Packman> Packmans ; 
 	private ArrayList<Ghost> Ghosts ;
 	private ArrayList<GeoBox> GeoBoxs ;
+	private ArrayList<Point3D> GeoBoxsPoints;
+	private ArrayList<Point3D> GeoBoxsPointsWithSD;
+	private ArrayList<Line2D> Line2Ds;
 	
 	/**
 	 * Game constructor
@@ -22,6 +27,9 @@ public class Game {
 		Packmans = new ArrayList<Packman>();
 		Ghosts = new ArrayList<Ghost>();
 		GeoBoxs = new ArrayList<GeoBox>();
+		GeoBoxsPoints = new ArrayList<Point3D>();
+		GeoBoxsPointsWithSD = new ArrayList<Point3D>();
+		Line2Ds = new ArrayList<Line2D>();
 	}
 	
 	/**
@@ -47,6 +55,38 @@ public class Game {
 	 */
 	public GeoBox getGeo(int index) {
 		return GeoBoxs.get(index);
+	}
+	
+	/**
+	 * get Line2Ds array
+	 * @return the Line2Ds array
+	 */
+	public ArrayList<Line2D> getLine2Ds() {
+		return Line2Ds;
+	}
+	
+	/**
+	 * get GeoBoxs array
+	 * @return the GeoBoxs array
+	 */
+	public ArrayList<GeoBox> getGeoArr() {
+		return GeoBoxs;
+	}
+	
+	/**
+	 * get GeoBoxsPoints array
+	 * @return the GeoBoxsPoints array
+	 */
+	public ArrayList<Point3D> GeoBoxsPointsArr() {
+		return GeoBoxsPoints;
+	}
+	
+	/**
+	 * get GeoBoxsPointsWithSD array
+	 * @return the GeoBoxsPointsWithSD array
+	 */
+	public ArrayList<Point3D> GeoBoxsPointsWithSD() {
+		return GeoBoxsPointsWithSD;
 	}
 	
 	/**
@@ -143,6 +183,27 @@ public class Game {
 	 */
 	public void removeP() {
 		while(!Packmans.isEmpty()) {Packmans.remove(0);}
+	}
+	
+	/**
+	 * remove method removed all the geoboxes
+	 */
+	public void removeGeoP() {
+		while(!GeoBoxsPoints.isEmpty()) {GeoBoxsPoints.remove(0);}
+	}
+	
+	/**
+	 * remove method removed all the geoboxes + source, destination 
+	 */
+	public void removeGeoPSD() {
+		while(!GeoBoxsPointsWithSD.isEmpty()) {GeoBoxsPointsWithSD.remove(0);}
+	}
+	
+	/**
+	 * remove method removed all the lines 
+	 */
+	public void removeLine2D() {
+		while(!Line2Ds.isEmpty()) {Line2Ds.remove(0);}
 	}
 	
 	

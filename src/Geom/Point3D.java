@@ -7,7 +7,6 @@ import java.io.Serializable;
  */
 public class Point3D implements Geom_element, Serializable 
 {
-	
 	//Variable statements
 	private static final long serialVersionUID = 1L;
 	private double _x,_y,_z;
@@ -37,9 +36,7 @@ public class Point3D implements Geom_element, Serializable
 
 	/**
 	 * Point3D constructor
-	 * @param x value of x
-	 * @param y value of y
-	 * @param z value of z
+	 * @param p point3d
 	 */
 	public Point3D(Point3D p) 
 	{
@@ -48,7 +45,11 @@ public class Point3D implements Geom_element, Serializable
 		_z=p.z();
 	}
 	
-	
+	/**
+	 * Point3D constructor
+	 * @param x value of x
+	 * @param y value of y
+	 */
 	public Point3D(double x,double y) 
 	{this(x,y,0);}
 	public Point3D(String s) {
@@ -61,50 +62,116 @@ public class Point3D implements Geom_element, Serializable
 	////////////////////////////       methods        /////////////////////////
 	///////////////////////////////////////////////////////////////////////////
 
+	/**
+	 * @return x value
+	 */
 	public double get_x() {
 		return this._x;
 	}
 	
+	/**
+	 * @return y value
+	 */
 	public double get_y() {
 		return this._y;
 	}
 	
+	/**
+	 * @return z value
+	 */
 	public double get_z() {
 		return this._z;
 	}
 	
+	/**
+	 * @param x value of x 
+	 */
 	public void set_x(double x) {
 		this._x = x;
 	}
 	
+	/**
+	 * @param y value of y 
+	 */
 	public void set_y(double y) {
 		this._y = y;
 	}
 	
+	/**
+	 * @param z value of z 
+	 */
 	public void set_z(double z) {
 		this._z = z;
 	}
 	
+	/**
+	 * @return x value
+	 */
 	public double x() {return _x;}
+	
+	/**
+	 * @return y value
+	 */
 	public double y() {return _y;}
+	
+	/**
+	 * @return z value
+	 */
 	public double z() {return _z;}
+	
+	/**
+	 * @return integer x value
+	 */
 	public int ix() {return (int)_x;}
+	
+	/**
+	 * @return integer y value
+	 */
 	public int iy() {return (int)_y;}
+	
+	/**
+	 * @return integer z value
+	 */
 	public int iz() {return (int)_z;}
 		
+	/**
+	 * add x,y,z values to point3d
+	 * @param p the point that we want to add
+	 */
 	public void add(Point3D p) { add(p._x,p._y,p._z);}
+	
+	/**
+	 * add x,y,z values to point3d
+	 * @param dx the x value that we want to add
+	 * @param dy the y value that we want to add
+	 * @param dz the z value that we want to add
+	 */
 	public void add(double dx, double dy, double dz) {
 			_x+=dx;_y+=dy;_z+=dz;
 		}
+	
+	/**
+	 * add x,y values to point3d
+	 * @param x the x value that we want to add
+	 * @param y the y value that we want to add
+	 */
 	public void add(double x, double y){this.add(x,y,0);}
 
+	/**
+	 * print a string that Property the point3d
+	 * @return string that Property the point3d
+	 */
 	public String toString() 
 	{
 		return ""+_y+","+_x+","+_z;
 	}
+	
+	@Override
 	public double distance2D(Point3D p2) { 
 		return this.distance3D(p2.x(), p2.y(), this.z());
 	}
+	
+	@Override
 	public double distance3D(Point3D p2) {
 		return this.distance3D(p2.x(), p2.y(), p2.z());}
 	public double distance3D(double x, double y , double z)
@@ -116,14 +183,32 @@ public class Point3D implements Geom_element, Serializable
 		return Math.sqrt(t);
 	}
 
+	/**
+	 * equals method
+	 * @param p2 the point that we wont to compare
+	 * @return boolean true if the points are equals
+	 */
 	public boolean equals(Point3D p2)
 	{
 		return ( (_x==p2._x) && (_y==p2._y) && (_z==p2._z) );
 	}
+	
+	/**
+	 * equals method with deviation
+	 * @param p2 the point that we wont to compare
+	 * @param dist the max deviation
+	 * @return boolean if the points are close to equals
+	 */
 	public boolean close2equals(Point3D p2, double dist)
 	{
 		return ( this.distance3D(p2)< dist );
 	}
+	
+	/**
+	 * equals method for x and y
+	 * @param p the point that we wont to compare x arnd y
+	 * @return boolean if the points equals (x and y)
+	 */
 	  public boolean equalsXY (Point3D p)
 	    {return p._x == _x && p._y == _y;}
 	    
@@ -253,7 +338,7 @@ public final static int DOWN = 6, UP = 7;
 		if(p==null) throw new RuntimeException("** Error: Point3D angleZ got null **");
 		return Math.atan2((p._z-_z), this.distance2D(p));
 	}	
-/** return the (planer angle of the vector between this --> p, in DEGREES, in a
+/** return the (planer angle of the vector between this p, in DEGREES, in a
  * compass order: north 0, east 90, south 180, west 270.
  * @param p is the end point of the vector (z value is ignored). 
  * @return angle in compass styye [0,360).
@@ -266,7 +351,7 @@ public final static int DOWN = 6, UP = 7;
 		else ans = 450-a_deg;
 		return ans;
 	}
-	/** return the vertical angles in DEGREES of the vector this-->p
+	/** return the vertical angles in DEGREES of the vector this p
 	 * 
 	 * */
 	public double up_angle(Point3D p) {
@@ -274,7 +359,7 @@ public final static int DOWN = 6, UP = 7;
 		ans = Math.atan2((p._z-_z), this.distance2D(p));
 		return Math.toDegrees(ans);
 	}
-	/** return the vertical angles in DEGREES of the vector this-->p, 
+	/** return the vertical angles in DEGREES of the vector this p, 
 	 *  @param h: is the extra height of the point p (used by GISElement).
 	 * */
 	public double up_angle(Point3D p, double h) {

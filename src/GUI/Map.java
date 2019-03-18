@@ -9,7 +9,7 @@ import javax.swing.JFrame;
 /**
  * This class is responsible for create a map
  */
-public class Map extends JFrame {
+public class Map  {
 
 	//Variable statements
 	private static final long serialVersionUID = 1L;
