@@ -45,7 +45,7 @@ The File format package has:
 ### ExampleGameMap
 ![exampleMap](https://user-images.githubusercontent.com/45077625/54526122-72aa9680-497e-11e9-8679-18b3b7a66ae0.png)
 ### ExampleBeforeRun
-
+![mapBeforRun](https://user-images.githubusercontent.com/45077625/54526146-91a92880-497e-11e9-9f12-b1df82584e2c.png)
 ### ExampleMiddelRun
 
 ### ExampleAfterRun
