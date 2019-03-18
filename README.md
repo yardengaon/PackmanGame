@@ -43,7 +43,7 @@ The File format package has:
   - replaceObjects: Updating the game from the server
 
 ### ExampleGameMap
-
+![exampleMap](https://user-images.githubusercontent.com/45077625/54526122-72aa9680-497e-11e9-8679-18b3b7a66ae0.png)
 ### ExampleBeforeRun
 
 ### ExampleMiddelRun
