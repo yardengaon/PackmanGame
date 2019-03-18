@@ -47,7 +47,7 @@ The File format package has:
 ### ExampleBeforeRun
 ![mapBeforRun](https://user-images.githubusercontent.com/45077625/54526146-91a92880-497e-11e9-9f12-b1df82584e2c.png)
 ### ExampleMiddelRun
-
+![mapInRunTime](https://user-images.githubusercontent.com/45077625/54526275-eba9ee00-497e-11e9-8570-30366b99963a.png)
 ### ExampleAfterRun
 
 ### Sorces
