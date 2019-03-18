@@ -49,6 +49,7 @@ The File format package has:
 ### ExampleMiddelRun
 ![mapInRunTime](https://user-images.githubusercontent.com/45077625/54526275-eba9ee00-497e-11e9-8570-30366b99963a.png)
 ### ExampleAfterRun
+![mapAfterRun](https://user-images.githubusercontent.com/45077625/54526301-05e3cc00-497f-11e9-8f01-76d7894bfec3.png)
 
 ### Sorces
 - the idea of Azimuth : https://en.wikipedia.org/wiki/Azimuth
